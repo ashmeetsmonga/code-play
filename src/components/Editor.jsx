@@ -14,7 +14,9 @@ const Editor = ({ value, displayName, language, onChange }) => {
 		<div className={`editor-container  ${open ? "" : "collapsed"}`}>
 			<div className='editor-title'>
 				<div>{displayName}</div>
-				<div onClick={() => setOpen((prev) => !prev)}>O/C</div>
+				<div onClick={() => setOpen((prev) => !prev)} style={{ cursor: "pointer" }}>
+					O/C
+				</div>
 			</div>
 			<ControlledEditor
 				onBeforeChange={handleChange}
