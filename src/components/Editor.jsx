@@ -5,6 +5,7 @@ import "codemirror/mode/xml/xml";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/mode/css/css";
 import { Controlled as ControlledEditor } from "react-codemirror2";
+import { FiMaximize2, FiMinimize2 } from "react-icons/fi";
 
 const Editor = ({ value, displayName, language, onChange }) => {
 	const [open, setOpen] = useState(true);
@@ -15,7 +16,7 @@ const Editor = ({ value, displayName, language, onChange }) => {
 			<div className='editor-title'>
 				<div>{displayName}</div>
 				<div onClick={() => setOpen((prev) => !prev)} style={{ cursor: "pointer" }}>
-					O/C
+					{open ? <FiMinimize2 /> : <FiMaximize2 />}
 				</div>
 			</div>
 			<ControlledEditor
