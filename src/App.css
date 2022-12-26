@@ -25,9 +25,15 @@
   /* border: 1px solid black; */
 }
 
-.collapsed {
+.editor-container.collapsed {
   flex-grow: 0;
 }
+
+.editor-container.collapsed .CodeMirror-scroll {
+  position: absolute;
+  overflow: hidden !important;
+}
+
 
 .editor-title {
   display: flex;
