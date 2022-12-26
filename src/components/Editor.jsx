@@ -7,11 +7,15 @@ import "codemirror/mode/css/css";
 import { Controlled as ControlledEditor } from "react-codemirror2";
 
 const Editor = ({ value, displayName, language, onChange }) => {
+	const [open, setOpen] = useState(true);
 	const handleChange = (editor, data, value) => onChange(value);
 
 	return (
-		<div className='editor-container'>
-			<div className='editor-title'>{displayName}</div>
+		<div className={`editor-container  ${open ? "" : "collapsed"}`}>
+			<div className='editor-title'>
+				<div>{displayName}</div>
+				<div onClick={() => setOpen((prev) => !prev)}>O/C</div>
+			</div>
 			<ControlledEditor
 				onBeforeChange={handleChange}
 				value={value}
